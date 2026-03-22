@@ -10,7 +10,6 @@ std::optional<std::size_t> disksim::scheduling::RandScheduler::pickNext(
     int now
 ) const {
     if (requests.empty()) return std::nullopt;
-    std::mt19937 gen(time(nullptr));
     std::uniform_int_distribution<std::size_t> dis(0, requests.size() - 1);
     return dis(_gen);
 }
