@@ -31,17 +31,17 @@ namespace disksim {
 
         double serviceTime(const DiskState& state, const Request& req) const;
 
+        const double rotationSpeed;      // rotations / ms
+        const double seekSpeed;          // cylinders / ms
+        const double readTransferRate;   // bytes / ms
+        const double writeTransferRate;  // bytes / ms
+
+        const int cylinders;
+        const int sectorsPerCylinder;
+        const int bytesPerSector;
+
     private:
         const double _anglePerSector;
-
-        const double _rotationSpeed; // rotations / ms
-        const double _seekSpeed; // cylinders / ms
-        const double _readTransferRate; // bytes / ms
-        const double _writeTransferRate; // bytes / ms
-
-        const int _cylinders;
-        const int _sectorsPerCylinder;
-        const int _bytesPerSector;
     };
 }
 
