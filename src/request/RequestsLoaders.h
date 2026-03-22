@@ -3,10 +3,10 @@
 #include <string>
 #include <vector>
 
-#include "request.h"
+#include "Request.h"
 
 namespace disksim {
-    struct DiskModel;
+    class DiskModel;
 
     std::vector<Request> loadRequestsFromFile(const std::string& path);
     std::vector<Request> generateRequests(
