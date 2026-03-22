@@ -47,7 +47,7 @@ namespace disksim {
 
     //---------------------------------------------------------
 
-    void MetricsCollector::onOperationFinished(const discsim::core::DiskOperationResult& result) {
+    void MetricsCollector::onOperationFinished(const disksim::core::DiskOperationResult& result) {
         const int id = result.request.id;
 
         RequestStats& stats = _stats[id];

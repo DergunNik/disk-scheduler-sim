@@ -38,7 +38,7 @@ namespace disksim {
         void beginSimulation(int time);
         void endSimulation(int time);
 
-        void onOperationFinished(const discsim::core::DiskOperationResult& result);
+        void onOperationFinished(const disksim::core::DiskOperationResult& result);
 
         std::size_t processedRequests() const;
 
