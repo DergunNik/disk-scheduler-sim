@@ -17,6 +17,17 @@ add_executable(
         src/scheduler/IScheduler.h
         src/metrics/MetricsCollector.cpp
         src/metrics/MetricsCollector.h
+        src/scheduler/rand/RandScheduler.cpp
+        src/scheduler/rand/RandScheduler.h
+        src/scheduler/FCFS/FcsfScheduler.cpp
+        src/scheduler/FCFS/FcsfScheduler.h
+        src/scheduler/SCAN/ScanScheduler.cpp
+        src/scheduler/SCAN/ScanScheduler.h
+        src/scheduler/SCAN/CscanScheduler.cpp
+        src/scheduler/SCAN/CscanScheduler.h
+        src/scheduler/SSTF/SstfScheduler.cpp
+        src/scheduler/SSTF/SstfScheduler.h
+        src/scheduler/SCAN/ScanScheduler.h
 )
 
 add_custom_command(

@@ -7,6 +7,7 @@
 
 #include "../request/Request.h"
 #include "../disk/DiskState.h"
+#include "../disk/DiskModel.h"
 
 namespace disksim::scheduling {
 
@@ -17,6 +18,7 @@ namespace disksim::scheduling {
         virtual std::optional<std::size_t> pickNext(
             const std::vector<Request>& requests,
             const DiskState& state,
+            const DiskModel& model,
             int now
         ) const = 0;
     };

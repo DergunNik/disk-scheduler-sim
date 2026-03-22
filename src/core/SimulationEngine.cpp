@@ -145,7 +145,7 @@ namespace disksim::core {
         }
 
         const auto nextIndex =
-            _scheduler->pickNext(_pendingRequests, _state, _now);
+            _scheduler->pickNext(_pendingRequests, _state, _model, _now);
 
         if (!nextIndex.has_value() || *nextIndex >= _pendingRequests.size()) {
             return;
@@ -156,6 +156,12 @@ namespace disksim::core {
 
         _pendingRequests[index] = _pendingRequests.back();
         _pendingRequests.pop_back();
+
+        if (request.targetCylinder > _state.currentCylinder) {
+            _state.direction = DiskHeadDirection::Inward;
+        } else if (request.targetCylinder < _state.currentCylinder) {
+            _state.direction = DiskHeadDirection::Outward;
+        }
 
         const double seek = _model.seekTime(_state, request);
         const double latency = _model.rotationalLatency(_state, request);
