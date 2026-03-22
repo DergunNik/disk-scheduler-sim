@@ -13,6 +13,10 @@ add_executable(
         src/disk/DiskState.h
         src/disk/DiskModel.cpp
         src/disk/DiskModel.h
+        src/core/SimulationEvent.h
+        src/scheduler/IScheduler.h
+        src/metrics/MetricsCollector.cpp
+        src/metrics/MetricsCollector.h
 )
 
 add_custom_command(
